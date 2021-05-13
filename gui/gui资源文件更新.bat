@@ -1,0 +1,1 @@
+pyrcc5.exe image.qrc -o image_rc.py

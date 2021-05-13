@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>927</width>
+    <height>564</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>哔哩哔哩视频下载器 Beta v0.1 作者：菠萝小西瓜  φ(゜▽゜*)♪</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="image.qrc">
+    <normaloff>:/ico/favicon.ico</normaloff>:/ico/favicon.ico</iconset>
+  </property>
+  <widget class="QPushButton" name="Sgin_in_Button">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>20</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,30);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>登录B站账号</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Download_Manage_Button">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>20</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,30);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>下载管理</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Setting_Button">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>20</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,30);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>931</width>
+     <height>571</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::NoContextMenu</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="image.qrc">:/jpg/background.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Login_Username">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>20</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,30);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Sgin_out_Button">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>20</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,30);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>退出B站账号</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Main_Button">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,30);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>首页</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>881</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,40);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>100</y>
+     <width>181</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,100);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>              视频封面</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>100</y>
+     <width>651</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,50);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>视频标题</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>180</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,50);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>投稿时间</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>180</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,50);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>UP主：</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="definition">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>290</y>
+     <width>691</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,60);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="title">
+    <string>下载视频分辨率（默认360P）</string>
+   </property>
+   <widget class="QRadioButton" name="D_480P">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>30</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>480P</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="D_720P">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>30</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>720P</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="D_720P60FPS">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>30</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>720P 60FPS</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="D_360P">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>360P</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="D_1080P">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>30</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>1080P</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="D_4K">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>30</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>4K</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="D_1080P60FPS">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>30</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>1080P 60FPS</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgba(0,0,0,0);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+    </property>
+    <property name="text">
+     <string>1080P+</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="Download_Video">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>380</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,50);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>下载视频</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Download_Danmu">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>380</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgba(0,0,0,30);color:white;
+
+font-family: 微软雅黑;
+
+font-size:15px</string>
+   </property>
+   <property name="text">
+    <string>下载弹幕</string>
+   </property>
+  </widget>
+  <zorder>Background</zorder>
+  <zorder>Login_Username</zorder>
+  <zorder>Setting_Button</zorder>
+  <zorder>Sgin_in_Button</zorder>
+  <zorder>Download_Manage_Button</zorder>
+  <zorder>Main_Button</zorder>
+  <zorder>Sgin_out_Button</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
+  <zorder>definition</zorder>
+  <zorder>Download_Video</zorder>
+  <zorder>Download_Danmu</zorder>
+ </widget>
+ <resources>
+  <include location="image.qrc"/>
+  <include location="image.qrc"/>
+  <include location="C:/Users/菠萝小西瓜/.designer/backup/image.qrc"/>
+ </resources>
+ <connections/>
+</ui>
