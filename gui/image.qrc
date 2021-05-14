@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="jpg">
-    <file>background.jpg</file>
-  </qresource>
-  <qresource prefix="ico">
-    <file>favicon.ico</file>
-  </qresource>
-</RCC>
