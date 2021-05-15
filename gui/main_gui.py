@@ -129,7 +129,13 @@ def show_sub(num):
                         temp_dialog.show()
                         temp_dialog.exec_()
                     else:
-                        pass
+                        # 原cookie失效，重新登录
+                        # 解决方案 : https://blog.csdn.net/weixin_43350361/article/details/104842332
+                        dialog = SubWin_Login()
+                        dialog.show()
+                        chcek_login_thread = threading.Thread(target=get_cookie_def,args=(dialog,))
+                        chcek_login_thread.start()
+                        dialog.exec_()
         else:
             # 解决方案 : https://blog.csdn.net/weixin_43350361/article/details/104842332
             dialog = SubWin_Login()

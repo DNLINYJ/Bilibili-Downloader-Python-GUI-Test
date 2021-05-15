@@ -79,6 +79,7 @@ class Ui_MainWindow(object):
 "font-size:15px")
         self.Sgin_out_Button.setObjectName("Sgin_out_Button")
         self.Search_Edit = QtWidgets.QLineEdit(self.centralwidget)
+        self.Search_Edit.returnPressed
         self.Search_Edit.setGeometry(QtCore.QRect(30, 210, 871, 41))
         self.Search_Edit.setStyleSheet("background:rgba(0,0,0,50);border:none;color:white;\n"
 "\n"
