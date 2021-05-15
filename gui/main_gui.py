@@ -1,10 +1,11 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 # from PyQt5.QtCore import pyqtSignal
-import ui_login as login
+# import ui_login as login
 import ui_download_manage as download
 import ui_setting as setting
 import ui_main as main
+import web_browser_new
 
 
 class MainWin(QMainWindow, main.Ui_MainWindow):
@@ -15,12 +16,12 @@ class MainWin(QMainWindow, main.Ui_MainWindow):
         self.setupUi(self)
 
 
-class SubWin_Login(QWidget, login.Ui_Form):
+class SubWin_Login(web_browser_new.window):
     # 自定义信号
 
     def __init__(self):
         super(SubWin_Login, self).__init__()
-        self.setupUi(self)
+        self.setup(self)
 
 class SubWin_Download_Manage(QWidget, download.Ui_Form):
     # 自定义信号
@@ -39,23 +40,20 @@ class SubWin_Setting(QWidget, setting.Ui_Form):
 def show_sub(num):
     if num == 1: #Login 
         SubWin_Login.show()
-        myWin.hide()
-        SubWin_Download_Manage.hide()
-        SubWin_Setting.hide()
     elif num == 2: #Download Manage
         SubWin_Download_Manage.show()
         myWin.hide()
         SubWin_Setting.hide()
-        SubWin_Login.hide()
+        # SubWin_Login.hide()
     elif num == 3: #Setting
         SubWin_Setting.show()
         myWin.hide()
         SubWin_Download_Manage.hide()
-        SubWin_Login.hide()
+        # SubWin_Login.hide()
 
 def show_main():
     myWin.show()
-    SubWin_Login.hide()
+    # SubWin_Login.hide()
     SubWin_Download_Manage.hide()
     SubWin_Setting.hide()
 
@@ -64,7 +62,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWin = MainWin()
     myWin.show()
-    SubWin_Login = SubWin_Login()
+    # SubWin_Login = SubWin_Login()
     SubWin_Download_Manage = SubWin_Download_Manage()
     SubWin_Setting = SubWin_Setting()
 
@@ -72,9 +70,9 @@ if __name__ == '__main__':
     myWin.Download_Manage_Button.clicked.connect(lambda:show_sub(2))
     myWin.Setting_Button.clicked.connect(lambda:show_sub(3))
 
-    SubWin_Login.Main_Button.clicked.connect(lambda:show_main())
-    SubWin_Login.Download_Manage_Button.clicked.connect(lambda:show_sub(2))
-    SubWin_Login.Setting_Button.clicked.connect(lambda:show_sub(3))
+    # SubWin_Login.Main_Button.clicked.connect(lambda:show_main())
+    # SubWin_Login.Download_Manage_Button.clicked.connect(lambda:show_sub(2))
+    # SubWin_Login.Setting_Button.clicked.connect(lambda:show_sub(3))
 
     SubWin_Download_Manage.Main_Button.clicked.connect(lambda:show_main())
     SubWin_Download_Manage.Sgin_in_Button.clicked.connect(lambda:show_sub(1))

@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "./gui"
+    ],
+    "python.analysis.extraPaths": [
+        "./gui"
+    ]
+}
