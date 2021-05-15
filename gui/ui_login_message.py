@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Dialog(object):
-    def setupUi(self, Dialog):
+    def setupUi(self, Dialog, num):
         Dialog.setObjectName("Dialog")
         Dialog.resize(229, 100)
         icon = QtGui.QIcon()
@@ -25,11 +25,16 @@ class Ui_Dialog(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
 
-        self.retranslateUi(Dialog)
+        self.retranslateUi(Dialog, num)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, Dialog, num):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "哔哩哔哩视频下载器 Beta v0.1 作者：菠萝小西瓜  φ(゜▽゜*)♪"))
-        self.label.setText(_translate("Dialog", "您已经登陆了哟~"))
+        if num == 0:
+            self.label.setText(_translate("Dialog", "您已经登陆了哟~"))
+        elif num == 1:
+            self.label.setText(_translate("Dialog", "成功退出登录~"))
+        elif num == 2:
+            self.label.setText(_translate("Dialog", "您还没有登录哟~"))
 import image_rc

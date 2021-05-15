@@ -11,6 +11,7 @@ import os
 import requests
 import base64 as b64
 import ui_login_message
+import ui_search
 
 # 加解密代码来自：https://blog.csdn.net/u010649766/article/details/79174580
 def xor_encrypt(tips,key):
@@ -80,6 +81,7 @@ def get_cookie_def(dialog):
                     with open("User Data\\Cookie.dat","w+") as f:
                         key = "bilibili_downloader"
                         f.write(xor_encrypt(now_login_cookie,key))
+            dialog.destory()
                         
 
 class MainWin(QMainWindow, main.Ui_MainWindow):
@@ -90,16 +92,17 @@ class MainWin(QMainWindow, main.Ui_MainWindow):
 
 class SubWin_Login_Message(QDialog, ui_login_message.Ui_Dialog):
     # 自定义信号
-    def __init__(self):
+    def __init__(self, num = 0):
         super(SubWin_Login_Message, self).__init__()
-        self.setupUi(self)
+        self.setupUi(self, num=num)
 
 class SubWin_Login(QDialog, login.Ui_Dialog):
     # 自定义信号
     def __init__(self):
         super(SubWin_Login, self).__init__()
         self.setupUi(self)
-        # self.show()
+    def destory(self):
+        self.reject()
 
 class SubWin_Download_Manage(QWidget, download.Ui_Form):
     # 自定义信号
@@ -111,6 +114,12 @@ class SubWin_Setting(QWidget, setting.Ui_Form):
     # 自定义信号
     def __init__(self):
         super(SubWin_Setting, self).__init__()
+        self.setupUi(self)
+
+class SubWin_Search(QWidget, ui_search.Ui_Form):
+    # 自定义信号
+    def __init__(self):
+        super(SubWin_Search, self).__init__()
         self.setupUi(self)
 
 def show_sub(num):
@@ -125,7 +134,7 @@ def show_sub(num):
                 v3 = requests.get(url="https://space.bilibili.com/", headers=headers, verify=False)
                 if v3.status_code == 200:
                     if "https://passport.bilibili.com" not in v3.request.url: 
-                        temp_dialog = SubWin_Login_Message()
+                        temp_dialog = SubWin_Login_Message(0)
                         temp_dialog.show()
                         temp_dialog.exec_()
                     else:
@@ -153,6 +162,16 @@ def show_sub(num):
         myWin.hide()
         SubWin_Download_Manage.hide()
         # SubWin_Login.hide()
+    elif num == 4:
+        if os.path.exists("User Data\\Cookie.dat") == True:
+            os.remove("User Data\\Cookie.dat")
+            temp_dialog = SubWin_Login_Message(1)
+            temp_dialog.show()
+            temp_dialog.exec_()
+        else:
+            temp_dialog = SubWin_Login_Message(2)
+            temp_dialog.show()
+            temp_dialog.exec_()
 
 def show_main():
     myWin.show()
@@ -163,26 +182,32 @@ def show_main():
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(False)
     myWin = MainWin()
     myWin.show()
-    # SubWin_Login = SubWin_Login()
+    SubWin_Search = SubWin_Search()
     SubWin_Download_Manage = SubWin_Download_Manage()
     SubWin_Setting = SubWin_Setting()
 
     myWin.Sgin_in_Button.clicked.connect(lambda:show_sub(1))
     myWin.Download_Manage_Button.clicked.connect(lambda:show_sub(2))
     myWin.Setting_Button.clicked.connect(lambda:show_sub(3))
+    myWin.Sgin_out_Button.clicked.connect(lambda:show_sub(4))
 
-    # SubWin_Login.Main_Button.clicked.connect(lambda:show_main())
-    # SubWin_Login.Download_Manage_Button.clicked.connect(lambda:show_sub(2))
-    # SubWin_Login.Setting_Button.clicked.connect(lambda:show_sub(3))
+    SubWin_Search.Main_Button.clicked.connect(lambda:show_main())
+    SubWin_Search.Sgin_in_Button.clicked.connect(lambda:show_sub(1)) # 登录 按钮绑定事件
+    SubWin_Search.Download_Manage_Button.clicked.connect(lambda:show_sub(2)) # 下载管理中心 按钮绑定事件
+    SubWin_Search.Setting_Button.clicked.connect(lambda:show_sub(3)) # 设置 按钮绑定事件
+    SubWin_Search.Sgin_out_Button.clicked.connect(lambda:show_sub(4))
 
     SubWin_Download_Manage.Main_Button.clicked.connect(lambda:show_main())
     SubWin_Download_Manage.Sgin_in_Button.clicked.connect(lambda:show_sub(1))
     SubWin_Download_Manage.Setting_Button.clicked.connect(lambda:show_sub(3))
+    SubWin_Download_Manage.Sgin_out_Button.clicked.connect(lambda:show_sub(4))
 
     SubWin_Setting.Main_Button.clicked.connect(lambda:show_main())
     SubWin_Setting.Sgin_in_Button.clicked.connect(lambda:show_sub(1))
     SubWin_Setting.Download_Manage_Button.clicked.connect(lambda:show_sub(2))
+    SubWin_Setting.Sgin_out_Button.clicked.connect(lambda:show_sub(4))
 
     sys.exit(app.exec_())
